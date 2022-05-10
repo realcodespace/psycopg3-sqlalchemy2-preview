@@ -1,0 +1,3 @@
+psycopg[binary]
+git+https://github.com/sqlalchemy/sqlalchemy.git@0cb54010d86493168cc763b836c0a71429b26c1b
+ipython

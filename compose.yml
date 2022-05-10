@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=psycoptest
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - db:/var/lib/postgresql/data/
+  app:
+    build:
+      context: ./
+      dockerfile: ./dockerfile
+    volumes:
+      - type: bind
+        source: ./
+        target: /server/
+volumes:
+  db:
+    driver: local
