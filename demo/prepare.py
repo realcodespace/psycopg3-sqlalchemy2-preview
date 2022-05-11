@@ -8,7 +8,10 @@ def prepare():
         curs = conn.execute(account_city_qry)
         print(conn)
         print("Prepare threshold: %s" % conn.prepare_threshold)
-        curs.execute(account_city_qry, prepare=False)
+
+        print("Max prepared statements: %s" % conn.prepared_max)
+
+        curs.execute(account_city_qry, prepare=True)
         print(curs, conn, sep='\n')
         print(curs.fetchall())
 
