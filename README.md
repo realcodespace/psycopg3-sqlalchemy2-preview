@@ -25,9 +25,14 @@ docker-compose -f compose.yml run app python demo/explain.py
 
 docker-compose -f compose.yml run app python demo/async_query.py
 
-# Prepared statements, cursors, _ConnectionFairy
+# Prepared statements, cursors, _ConnectionFairy, dbapi_connection
 
 docker-compose -f compose.yml run app python demo/prepare.py
+
+# Autocommit with raw_connection()
+
+docker-compose -f compose.yml run app python demo/autocommit.py
+
 ```
 
 ## References

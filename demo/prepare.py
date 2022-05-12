@@ -12,7 +12,7 @@ def prepare():
         print("Max prepared statements: %s" % conn.prepared_max)
 
         curs.execute(account_city_qry, prepare=True)
-        print(curs, conn, sep='\n')
+        print(curs, conn, conn.dbapi_connection, sep='\n')
         print(curs.fetchall())
 
 
